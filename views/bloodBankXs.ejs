@@ -1,0 +1,116 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+</head>
+<style>
+   body{
+            background-image: url("https://img.freepik.com/free-vector/clean-medical-background_53876-97927.jpg?w=996&t=st=1710478916~exp=1710479516~hmac=05f4001f9adbc2e13b016eaf1cf48f6602846639507c40bf2a6e9c62be9bc1db");
+            background-size: cover;
+            background-attachment: fixed;
+            font-family: "Poppins", sans-serif;
+            overflow: hidden;
+          }
+          button {
+            width: 11rem;
+            height: 4rem;
+            border-radius: 1rem;
+            font-size: 25px;
+            font-family: inherit;
+            border: none;
+            position: relative;
+            overflow: hidden;
+            z-index: 1;
+            box-shadow: 6px 6px 12px #c5c5c5,
+             -6px -6px 12px #ffffff;
+          }
+
+          .btn3::before {
+            content: '';
+            width: 0;
+            height: 4rem;
+           
+            position: absolute;
+            top: 0;
+            left: 0;
+            background-image: linear-gradient(to right, #FF0000  0%,  #FF7878  100%);
+            transition: .5s ease;
+            display: block;
+            z-index: -1;
+          }
+
+          .btn3:hover::before {
+            width: 15rem;
+          }
+
+          .btn1::before {
+            content: '';
+            width: 0;
+            height: 4rem;
+           
+            position: absolute;
+            top: 0;
+            left: 0;
+            background-image: linear-gradient(135deg, rgb(82, 229, 231) 10%, rgb(19, 12, 183) 100%);
+            transition: .5s ease;
+            display: block;
+            z-index: -1;
+          }
+
+          .btn1:hover::before {
+             width: 9em;
+          }
+
+          .btn2::before {
+            content: '';
+            width: 0;
+            height: 4rem;
+           
+            position: absolute;
+            top: 0;
+            left: 0;
+            background-image:linear-gradient(to right, rgb(182, 244, 146), rgb(51, 139, 147));
+            transition: .5s ease;
+            display: block;
+            z-index: -1;
+          }
+
+          .btn2:hover::before {
+             width: 9em;
+          }
+
+          button a{
+            text-decoration: none;
+            color: black;
+          }
+
+          .btn-container{
+            display: flex;
+            justify-content: center;
+            height: 90vh;
+            align-items: center;
+            flex-direction: column;
+          }
+          
+          button{
+            margin-top: 2rem;
+          }
+</style>
+<body>
+    <div class="btn-container">
+      <button><a id="newPostBtn" href="/new" class="btn1">Upload Data</a></button>
+      <% posts.forEach(post=> { %>
+
+      
+      <button><a class="edit btn2" href="/edit/<%= post.id %>">Edit</a></button>
+      <button><a class=" delete btn3" href="/api/posts/delete/<%= post.id %>">Delete</a></button>
+
+      <% }) %>
+    </div>
+
+          
+</body>
+</html>

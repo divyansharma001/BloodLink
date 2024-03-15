@@ -1,0 +1,417 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Practice</title>
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link rel="stylesheet" href="index.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+    
+    
+</head>
+<body>
+    <style>
+      body{
+        font-family: "poppins",sans-serif;
+      }
+
+.btn {
+ position: relative;
+ font-size: 17px;
+ text-transform: uppercase;
+ text-decoration: none;
+ padding: 1em 2.5em;
+ display: inline-block;
+ border-radius: 6em;
+ transition: all .2s;
+ border: none;
+ font-family: inherit;
+ font-weight: 500;
+ color: white;
+ background-color: red;
+}
+
+.btn:hover {
+ transform: translateY(-3px);
+
+}
+
+.btn:active {
+ transform: translateY(-1px);
+ box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+}
+
+.btn::after {
+ content: "";
+ display: inline-block;
+ height: 100%;
+ width: 100%;
+ border-radius: 100px;
+ position: absolute;
+ top: 0;
+ left: 0;
+ z-index: -1;
+ transition: all .4s;
+}
+.main{
+    display: flex;
+    justify-content: space-between;
+    padding: 20px;
+    margin: 5px;
+}
+.imgabout{
+    width: 90%;
+    margin: 55px;
+}
+.btn::after {
+ background-color: red;
+}
+
+.btn:hover::after {
+ transform: scaleX(1.4) scaleY(1.6);
+ opacity: 0;
+}
+        .navbar-nav .nav-link {
+        position: relative;
+        text-decoration: none;
+        }
+
+        .navbar-nav .nav-link::after {
+        content: '';
+        position: absolute;
+        left: 0;
+        bottom: -0.7px;
+        width: 100%;
+        height: 2px;
+        background-color: transparent;
+        transition: background-color 0.5s;
+        }
+
+        .navbar-nav .nav-link:hover::after {
+        background-color: #fa0101; 
+        }
+        .aboutimg{
+            height: 100px;
+            border-radius: 10%;
+            
+        }
+
+        .card-body:hover {
+    cursor: pointer;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2); /* Add a shadow on hover */
+}
+
+.card-body:hover h5 {
+    color: red; /* Change text color on hover */
+}
+.img{
+    height: 70vh;
+}
+.row1{
+    display: flex;
+
+    margin-left:100px;
+}
+.dropdown-menu{
+    border: 2px solid red;
+    height: 14vh;
+    margin-right: 20px;
+   
+}
+.form{
+    margin: 10px;
+}
+    </style>
+    
+<header >
+    <nav class="navbar navbar-expand-lg navbar-light bg-dark  px-4 border-bottom  fixed-top" >
+        <div class="container-fluid">
+          <a class="navbar-brand fs-2" href="#"><strong><span class="text-danger">Blood</span></strong><span class="text-light">Link</span></a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav ms-auto mb-2 mb-lg-0 fs-5 text-center">
+              <li class="nav-item">
+                <a class="nav-link text-light" href="#">Home</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link text-light" href="/hospitalSignup">Hospital</a>
+              </li>
+
+              <li class="nav-item">
+                <a class="nav-link text-light" href="/bloodbanksignup">Blood Bank</a>
+              </li>
+              
+              
+           
+               
+                   <!-- <a class="nav-link text-light" href="#contact">Donate</a> -->
+                   <li class="nav-item dropdown">
+                        <a class="nav-link text-light dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            Donate
+                        </a>
+                        <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                          <li><a class="dropdown-item" href="#">Login</a></li>
+                          <li><hr class="dropdown-divider"></li>
+                          <li><a class="dropdown-item" href="index.html">SignUp</a></li>
+                          <li><hr class="dropdown-divider"></li>
+                          
+                            
+                        </ul>
+                    </li>
+              
+                
+                    
+                    
+              </li>
+            
+            </ul>
+            
+          </div>
+        </div>
+      </nav>
+</header>
+
+
+<div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel" data-bs-interval="3000">
+    <div class="carousel-inner ">
+      <div class="carousel-item active">
+        <img src="/images/img1.png" class=" img-fluid d-block w-100" alt="...">
+      </div>
+      <div class="carousel-item">
+        <img src="/images/img2.png" class="  img-fluid d-block w-100" alt="...">
+      </div>
+      <div class="carousel-item">
+        <img src="/images/img3.png" class="  img-fluid d-block w-100" alt="...">
+      </div>
+    </div>
+   
+  </div>
+
+<section class="about my-5" id="about">
+    <div class="container-fluid">
+        <h1 class=" text-center "  data-aos="fade-up" data-aos-offset="200" ><strong><span class="text-danger">About -</span></strong> us</h1>
+        <hr class="w-25 m-auto">
+        <div class="main my-5">
+            <div class="col-sm-12 col-md-6 col-lg-6 col-12">
+                <h1 data-aos="fade-right" data-aos-offset="300"><span class="text-danger">What we</span> do?</h1>
+                <p  data-aos="fade-right" data-aos-offset="300">
+                  At Blood Connect, we facilitate blood donation by connecting donors, recipients, and blood banks through our intuitive web platform. With features like real-time alerts and easy blood type searches, we streamline the donation process, making it accessible and efficient. Our mission: saving lives through simple, effective blood donation solutions.
+                    
+                </p>
+                
+                <div class="accordion" id="accordionExample" data-aos="fade-right" data-aos-offset="300">
+                    <div class="accordion-item">
+                      <h2 class="accordion-header" id="headingOne" >
+                        <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                          Our Dream
+                        </button>
+                      </h2>
+                      <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
+                        <div class="accordion-body">
+                          We envision a world where blood shortages are a thing of the past. We dream of a future where every individual in need has timely access to life-saving blood, where donors feel empowered to make a difference, and where healthcare providers can rely on a robust system for blood procurement. Through innovation, collaboration, and unwavering commitment, we aspire to realize this dream and create a healthier, more resilient society for generations to come."
+                        </div>
+                      </div>
+                    </div>
+                    <div class="accordion-item">
+                      <h2 class="accordion-header" id="headingTwo">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                          How does Blood Connect ensure the safety and reliability of donated blood?
+                        </button>
+                      </h2>
+                      <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#accordionExample">
+                        <div class="accordion-body">
+                          Blood Connect prioritizes safety and reliability through rigorous screening processes. Blood banks associated with our platform adhere to strict regulatory standards, including donor eligibility criteria, screening for infectious diseases, and proper storage protocols. Additionally, donors undergo thorough health assessments and screening measures before their blood is accepted. We also ensure transparent communication regarding the origin and handling of donated blood, providing peace of mind to both donors and recipients.
+                        </div>
+                      </div>
+                    </div>
+
+                    <div class="accordion-item">
+                      <h2 class="accordion-header" id="headingTwo">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseTwo">
+                          Can I donate blood if I have a medical condition or take medication?
+                        </button>
+                      </h2>
+                      <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#accordionExample">
+                        <div class="accordion-body">
+                          The eligibility to donate blood varies depending on the medical condition and medication. Certain medical conditions or medications may disqualify individuals from donating blood due to potential risks to the donor or the recipient. It's essential to consult with healthcare professionals or blood donation centers to determine eligibility and ensure the safety of both the donor and the recipient.
+                        </div>
+                      </div>
+                    </div>
+
+                    <div class="accordion-item">
+                      <h2 class="accordion-header" id="headingTwo">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFour" aria-expanded="false" aria-controls="collapseTwo">
+                          Is there any incentive for donating blood through Blood Connect?
+                        </button>
+                      </h2>
+                      <div id="collapseFour" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#accordionExample">
+                        <div class="accordion-body">
+                          Yes, Blood Connect implements a reward system to incentivize blood donation. Donors receive rewards or incentives as a token of appreciation for their altruistic act. These rewards may vary and could include vouchers, discounts, or recognition within the Blood Connect community. Additionally, the intrinsic reward of knowing that one has contributed to saving lives serves as a powerful motivator for donors.
+                        </div>
+                      </div>
+                    </div>
+
+
+            
+                  </div>
+            </div>
+
+            <div class=" aboutimg col-sm-12 col-md-6 col-lg-6 col-12 " >
+                <img data-aos="fade-left" data-aos-offset="300" src="/images/img5.png"  class="imgabout" alt="doc">
+            </div>
+        </div>
+    </div>
+
+</section>
+
+<section class="Services py-5 bg-light  " id="Services" >
+    <div class="container ">
+        <h1  data-aos="fade-up" data-aos-offset="200" class=" text-center "><strong><span class="text-danger ">Our -</span></strong> Services</h1>
+        <hr class="w-25 m-auto ">
+        <div class="row1 my-5">
+            <div class="col-sm-12 col-md-4 col-lg-4 col-12 "  data-aos="flip-up" data-aos-offset="300">
+                <div class="card " style="width: 18rem;">
+                   
+                    <div class="card-body rounded text-center">
+                      <h5  class="card-title">Blood Donation </h5>
+                    
+                     
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-12 col-md-4 col-lg-4 col-12"  data-aos="flip-up" data-aos-offset="300">
+                <div class="card" style="width: 18rem;">
+                   
+                    <div class="card-body bg-danger rounded text-light text-center">
+                      <h5  class="card-title ">Emergency Response System</h5>
+                     
+                     
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-12 col-md-4 col-lg-4 col-12"  data-aos="flip-up" data-aos-offset="300">
+                <div class="card" style="width: 18rem;">
+                   
+                    <div class="card-body rounded text-center">
+                      <h5 class="card-title">Blood Bank Integration</h5>
+                     
+                     
+                    </div>
+                  </div>
+            </div>
+
+        </div>
+
+        <div class="row1">
+            <div class="col-sm-12 col-md-4 col-lg-4 col-12  " data-aos="flip-up" data-aos-offset="300">
+                <div class="card" style="width: 18rem;">
+                 
+                    <div class="card-body rounded text-center">
+                      <h5  class="card-title"> Health Card </h5>
+                    
+                      
+                    </div>
+                  </div>
+            </div>
+            <div class="col-sm-12 col-md-4 col-lg-4 col-12"  data-aos="flip-up" data-aos-offset="300">
+                <div class="card" style="width: 18rem;">
+                    
+                    <div class="card-body bg-danger rounded text-light text-center">
+                      <h5 class="card-title ">Location-Based Blood Search</h5>
+                
+                      
+                    </div>
+                  </div>
+            </div>
+            <div class="col-sm-12 col-md-4 col-lg-4 col-12"  data-aos="flip-up" data-aos-offset="300">
+                <div class="card" style="width: 18rem;">
+                   
+                    <div class="card-body rounded text-center">
+                      <h5 class="card-title">User Rewards Program</h5>
+                    
+                      
+                    </div>
+                  </div>
+            </div>
+
+        </div>
+
+
+        
+        
+    </div>
+</section>
+
+<section class="contact" id="contact">
+    <div class="container py-5">
+        <h1 data-aos="fade-up" data-aos-offset="300" class=" text-center "><strong><span class="text-danger">Contact -</span></strong> US</h1>
+        <hr class="w-25 m-auto  ">
+ 
+        <div class="row my-5">
+            <div class="col-sm-12 col-md-6 col-lg-6 col-12" data-aos="fade-right" data-aos-offset="300">
+                <img  src="/images/img6.jpg"  class="img   img-thumbnail border-danger  " alt="">
+                
+            </div>
+
+            <div class="form col-sm-12 col-md-6 col-lg-6 col-12 m-auto  my-5"  data-aos="fade-left" data-aos-offset="300">
+                <form class="row g-3" >
+                    <div class="col-md-6">
+                      <label for="inputEmail4" class="form-label" style="font-size: 2rem;">Email</label>
+                      <input type="email" class="form-control" id="inputEmail4">
+                    </div>
+                    <div class="col-md-6">
+                      <label for="inputPassword4" class="form-label" style="font-size: 2rem;">Password</label>
+                      <input type="password" class="form-control" id="inputPassword4">
+                    </div>
+                    <div class="col-12">
+                      <label for="inputAddress" class="form-label" style="font-size: 2rem;">Address</label>
+                      <input type="text" class="form-control" id="inputAddress" placeholder="Address...">
+                    </div>
+                   
+                    <div class="col-md-6">
+                      <label for="inputCity" class="form-label"style="font-size: 2rem;">City</label>
+                      <input type="text" class="form-control" id="inputCity">
+                    </div>
+                    <div class="col-md-4">
+                      <label for="inputState" class="form-label"style="font-size: 2rem;">State</label>
+                      <select id="inputState" class="form-select">
+                        <option selected>Choose...</option>
+                        <option>...</option>
+                      </select>
+                    </div>
+                    <div class="col-md-2">
+                      <label for="inputZip" class="form-label"style="font-size: 2rem;">Pin</label>
+                      <input type="text" class="form-control" id="inputZip">
+                    </div>
+                    <div class="col-12">
+                    </div>
+                    <div class="btn-container">
+                        <button class="btn"> Submit</button>
+                     
+                  </div>
+                  </form>
+            </div>
+
+        </div>
+
+    </div>
+</section>
+
+<footer >
+    <div  class=" Connect container-fluid bg-danger fs-3 text-light text-center font-weight-bold">Empowering Connections, Saving Lives</div>
+</footer>
+
+
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js" integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF" crossorigin="anonymous"></script>
+    <script>
+        AOS.init();
+    </script>
+</body>
+</html>

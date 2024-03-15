@@ -1,0 +1,55 @@
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Blog</title>
+  <link rel="stylesheet" href="./css/main.css">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+</head>
+
+<body>
+
+  <style>
+
+    body{
+      font-family: "Poppins", sans-serif;
+      background-image: url("https://img.freepik.com/free-vector/clean-medical-background_53876-97927.jpg?w=996&t=st=1710478916~exp=1710479516~hmac=05f4001f9adbc2e13b016eaf1cf48f6602846639507c40bf2a6e9c62be9bc1db");
+      background-size: cover;
+      background-attachment: fixed;
+      display: flex;
+      height: 100vh;
+      justify-content: center;
+      align-items: center;
+    }
+
+
+
+  </style>
+  <div class="container">
+    <h1>Available Blood in Blood Banks</h1>
+    <!-- <a id="newPostBtn" href="/new">Enter your blood Availability</a> -->
+    <ul id="postsList">
+      <% posts.forEach(post=> { %>
+        <li>
+          <h2>
+            <%=post.title%>
+          </h2>
+          <small>
+            <%=post.date %>
+          </small>
+          <p>
+            <%=post.content%>
+          </p>
+          <small>By: <%=post.author%> </small>
+          <a class="edit" href="/">Edit</a>
+          <a class="delete" href="/">Delete</a>
+        </li>
+        <% }); %>
+    </ul>
+  </div>
+
+</body>
+
+</html>
