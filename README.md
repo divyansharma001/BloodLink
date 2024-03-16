@@ -2,13 +2,15 @@
 
 BloodLink is a web application designed to facilitate blood donation and management, connecting blood donors, hospitals, and blood banks efficiently.
 
-### Screenshots
+## BloodLink Project Showcase
 
 ![Dashboard](./public/images/frontPage.png)
 ![Donor Registration](./public/images/register.png)
 ![Hospital access](./public/images/hospital.png)
 ![Blood Data](./public/images/bloodData.png)
-![Blood Data](./public/images/card.png)
+![Blood Data](./public/images/card.jpg)
+[![BloodLink Demo](https://img.youtube.com/vi/mjSt8V2mXsQ/0.jpg)](https://youtu.be/mjSt8V2mXsQ)
+
 
 
 ## Table of Contents
