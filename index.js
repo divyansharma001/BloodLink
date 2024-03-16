@@ -4,6 +4,7 @@ import pg from "pg";
 import bcrypt from "bcrypt";
 import axios from "axios";
 import dotenv from 'dotenv'
+import nodemailer from "nodemailer"
 
 
 const app = express();
@@ -20,11 +21,21 @@ const db = new pg.Client({
   user: "postgres",
   host: "localhost",
   database: "bloodBank",
-  password: "l73SHWZH",
+  password: "process.env.DB_PASSWORD",
   port: 5432,
 });
 
 db.connect();
+
+const transporter = nodemailer.createTransport({
+  port: 465, // true for 465, false for other ports
+  host: "smtp.gmail.com",
+  auth: {
+    user: "youremail@gmail.com",
+    pass: "XXXXXXXX",
+  },
+  secure: true,
+});
 
 
 
@@ -413,19 +424,21 @@ app.post('/useCard', (req,res)=>{
   const infectiousDisease = req.body.infectious_disease;
   const lbsg = req.body.lbsg;
   const ubsg = req.body.ubsg;
-  const bloodGroup = req.body.blood_group;
+  const cd = req.body.cd;
+  const bg = req.body.bg;
   const call = req.body.call
 
   res.render('card.ejs', {
    name: name,
+   bloodGroup: bg,
    age: age,
    call: call,
-   bloodGroup : bloodGroup,
+   bloodGroup : bg,
+   cardioVascular: cd,
    ubsg: ubsg,
    lbsg: lbsg,
    infectiousDisease: infectiousDisease,
-   chronicCondition: chronicCondition,
-   pastBloodSugar: pastBloodSugar
+   chronicCondition: chronicCondition
 
 
   })
@@ -433,6 +446,26 @@ app.post('/useCard', (req,res)=>{
 
 })
 
+
+app.post("/text-mail", (req, res) => {
+  const { to, subject, text } = req.body;
+  const mailData = {
+    from: "youremail@gmail.com",
+    to: 'recieveremail@gmail.com',
+    subject: subject,
+    text: text,
+    html: "<b>Community alert!  </b><br> Critical blood shortage for O+ positive Blood Group! Donate now at Janakpuri Hospital to save lives. Spread the word. Act fast! <br> Thank you <br/>",
+  };
+
+  transporter.sendMail(mailData, (error, info) => {
+    if (error) {
+      return console.log(error);
+    }
+    res
+      .status(200)
+      .send({ message: "Mail sent successfully!", message_id: info.messageId });
+  });
+});
 
 app.listen(port, () => {
   console.log(`Server is running on port ${port}`);

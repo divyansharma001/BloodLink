@@ -9,7 +9,7 @@ const db = new pg.Client({
   user: "postgres",
   host: "localhost",
   database: "bloodBank",
-  password: "l73SHWZH",
+  password: "process.env.DB_PASSWORD",
   port: 5432,
 });
 
@@ -29,7 +29,7 @@ let posts = [
   ab_neg:"1",
   o_pos:"1",
   o_neg:"1",
-  bloodbankphone: "9305441885"
+  bloodbankphone: "93054418XXX"
 },
 ];
 
