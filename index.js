@@ -20,7 +20,7 @@ const db = new pg.Client({
   user: "postgres",
   host: "localhost",
   database: "bloodBank",
-  password: " process.env.DB_PASSWORD",
+  password: "l73SHWZH",
   port: 5432,
 });
 
@@ -401,6 +401,37 @@ console.log("minid=", result.rows[0].min);
       id: result.rows[0].min //ye wali id laani hai kahi se ya to db se ya fir api se
 })})
 
+app.get('/useCard', (req,res)=>{
+  res.render('useCard')
+})
+
+app.post('/useCard', (req,res)=>{
+  const name = req.body.cardName;
+  const age = req.body.cardAge;
+  const pastBloodSugar = req.body.past_blood_sugar;
+  const chronicCondition = req.body.chronic_condition;
+  const infectiousDisease = req.body.infectious_disease;
+  const lbsg = req.body.lbsg;
+  const ubsg = req.body.ubsg;
+  const bloodGroup = req.body.blood_group;
+  const call = req.body.call
+
+  res.render('card.ejs', {
+   name: name,
+   age: age,
+   call: call,
+   bloodGroup : bloodGroup,
+   ubsg: ubsg,
+   lbsg: lbsg,
+   infectiousDisease: infectiousDisease,
+   chronicCondition: chronicCondition,
+   pastBloodSugar: pastBloodSugar
+
+
+  })
+
+
+})
 
 
 app.listen(port, () => {
