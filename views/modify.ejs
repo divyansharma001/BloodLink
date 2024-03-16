@@ -4,7 +4,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Edit Blog</title>
+  <title>Edit Data</title>
   <link rel="stylesheet" href="./css/main.css">
 </head>
 <style>#newPostBtn {
@@ -34,18 +34,34 @@
 
     <% if (locals.post) { %>
       <form id="editForm" method="post" action="/api/posts/<%=post.id%>">
-        <input type="text" name="Blood data" value="<%=post.title %>">
-        <textarea id="content" rows="10"><%=post.content %></textarea>
-        <input type="text" name="BloodBank Name" value="<%=post.author %>">
+        <input type="text" name="phone" value="<%=post.bloodbankphone %>">
+        <input type="tel" name="bloodbankname" value="<%=post.bloodbankname %>">
+        <!-- <textarea id="content" rows="10"><%=post.content %></textarea> -->
+        <input type="text" name="a_pos" value="<%=post.a_pos %>">
+        <input type="text" name="a_neg" value="<%=post.a_neg %>">
+        <input type="text" name="b_pos" value="<%=post.b_pos %>">
+        <input type="text" name="b_neg" value="<%=post.b_neg %>">
+        <input type="text" name="ab_pos" value="<%=post.ab_pos %>">
+        <input type="text" name="ab_neg" value="<%=post.ab_neg%>">
+        <input type="text" name="o_pos" value="<%=post.o_pos%>">
+        <input type="text" name="o_neg" value="<%=post.o_neg%>">
         <button class="full-width" type="submit">
           <%= submit %>
         </button>
       </form>
       <% } else {%>
         <form id="newPostForm" method="post" action="/api/posts">
-          <input type="text" name="title" placeholder="Title" required>
-          <textarea name="content" placeholder="Content" required rows="10"></textarea>
-          <input type="text" name="author" placeholder="Author" required>
+          <input type="text" name="bloodbankname" placeholder="BloodBank Name" required>
+          <input type="tel" name="bloodbankphone" placeholder="BloodBank Contact Number" required>
+          <input type="number" name="a_pos" placeholder="Enter Quantity of A+ blood available" required>
+          <input type="number" name="a_neg" placeholder="Enter Quantity of A- blood available" required>
+          <input type="number" name="b_pos" placeholder="Enter Quantity of B+ blood available" required>
+          <input type="number" name="b_neg" placeholder="Enter Quantity of B- blood available" required>
+          <input type="number" name="ab_pos" placeholder="Enter Quantity of AB+ blood available" required>
+          <input type="number" name="ab_neg" placeholder="Enter Quantity of AB- blood available" required>
+          <input type="number" name="o_pos" placeholder="Enter Quantity of O+ blood available" required>
+          <input type="number" name="o_neg" placeholder="Enter Quantity of O- blood available" required>
+          <input type="text" name="author" placeholder="Contact Info" required>
           <button class="full-width" type="submit">
             <%= submit %>
           </button>

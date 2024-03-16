@@ -343,16 +343,17 @@ app.post("/api/posts/:id", async (req, res) => {
 app.get("/bloodData", async (req, res) => {
   try {
     const response = await axios.get(`${API_URL}/posts`);
-    console.log(response);
-    res.render("bloodData.ejs", { posts: response.data });
+    console.log("this one is response", response.data);
+    res.render("table.ejs", { posts: response.data });
   } catch (error) {
-    console.log(error)
-    res.status(500).json({ message: "Error fetching posts" });
+    console.log(error);
+    res.status(500).send({ message: "Error fetching posts" });
   }
 });
+
 //creating new 
 app.get("/new", (req, res) => {
-  res.render("modify.ejs", { heading: "New Post", submit: "Create Post" });
+  res.render("modify.ejs", { heading: "Upload Data", submit: "Upload" });
 });
 //editing
 app.get("/edit/:id", async (req, res) => {

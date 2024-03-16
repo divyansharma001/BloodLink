@@ -19,11 +19,17 @@ var idToedit;
 // In-memory data store
 let posts = [
   {
-  id: 1,
-  title: "Janakpuri Blood Bank",
-  content:
-   "O+ : 4units O- : 2units A : 4units",
-  author: "Manager",
+ id: 1,
+  bloodbankname: "Janakpuri Blood Bank",
+  a_pos:"1",
+  a_neg:"1",
+  b_pos:"1",
+  b_neg:"1",
+  ab_pos:"1",
+  ab_neg:"1",
+  o_pos:"1",
+  o_neg:"1",
+  bloodbankphone: "9305441885"
 },
 ];
 
@@ -33,7 +39,7 @@ let lastId = 1;
 
 async function checkPost() {
   const result = await db.query(
-    "SELECT id, title, content, author FROM posts",
+    "SELECT id, bloodbankname, a_pos, a_neg, b_pos, b_neg, ab_pos, ab_neg, o_pos, o_neg, bloodbankdata FROM bloodata",
   );
 
   console.log("resultRows:", result.rows)
@@ -69,24 +75,33 @@ app.post("/posts", async(req, res) => {
   const newId = lastId += 1;
   const post = {
     id: newId,
-    title: req.body.title,
-    content: req.body.content,
-    author: req.body.author,
+    bloodbankname: req.body.bloodbankname,
+    bloodbankphone: req.body.bloodbankphone,
+    a_pos: req.body.a_pos,
+    a_neg: req.body.a_neg,
+    b_pos: req.body.b_pos,
+    b_neg: req.body.b_neg,
+    ab_pos: req.body.ab_pos,
+    ab_neg: req.body.ab_neg,
+    o_pos: req.body.o_pos,
+    o_neg: req.body.o_neg,
+
+
   };
   console.log("post",post);
   posts.push(post);
   
-  try {
-    await db.query(
-      "INSERT INTO posts (id, title, content, author) VALUES ($1, $2, $3, $4)",
-      [newId, req.body.title, req.body.content, req.body.author]
-    );
+  // try {
+  //   await db.query(
+  //     "INSERT INTO blooddata (id, bloodbankname, a_pos, a_neg, b_pos, b_neg, ab_pos, ab_neg, o_pos, o_neg, bloodbankphone) VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11)",
+  //     [newId, req.body.bloodbankname, req.body.a_pos, req.body.a_neg, req.body.b_pos, req.body.b_neg, req.body.ab_pos, req.body.ab_neg, req.body.o_pos, req.body.o_neg, req.body.bloodbankphone]
+  //   );
     
-  } catch (err) {
-    console.log(err);
-  }
+  // } catch (err) {
+  //   console.log(err);
+  // }
   res.status(201).json(post);
-  checkPost()
+  // checkPost()
 });
 
 // PATCH a post when you just want to update one parameter
