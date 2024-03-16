@@ -20,7 +20,7 @@ const db = new pg.Client({
   user: "postgres",
   host: "localhost",
   database: "bloodBank",
-  password: "process.env.DB_PASSWORD",
+  password: " process.env.DB_PASSWORD",
   port: 5432,
 });
 
@@ -193,7 +193,7 @@ app.post('/hospitalLogin', async(req,res)=>{
         } else {
           console.log('result', result)
           if (result) {
-            res.redirect("/bloodData");
+            res.render("afterHospital.ejs");
           } else {
             res.send("Incorrect Password");
           }
