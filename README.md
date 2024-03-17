@@ -8,7 +8,8 @@ BloodLink is a web application designed to facilitate blood donation and managem
 ![Donor Registration](./public/images/register.png)
 ![Hospital access](./public/images/hospital.png)
 ![Blood Data](./public/images/bloodData.png)
-![Blood Data](./public/images/card.jpg)
+![Blood Data](./public/images/card.jpg) </br>
+**Youtube video scrolling through website is given below:** </br>
 [![BloodLink Demo](https://img.youtube.com/vi/mjSt8V2mXsQ/0.jpg)](https://youtu.be/mjSt8V2mXsQ)
 
 
